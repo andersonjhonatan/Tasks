@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   if (!session?.user) {
     return {
       redirect: {
-        destination: '/error',
+        destination: '/',
         permanent: false,
       },
     };
