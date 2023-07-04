@@ -1,9 +1,10 @@
 import Header from '@/src/components/Header/Header';
 import Dashboard from '@/src/components/Dashoboard/Dashboard';
 import React from 'react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { getSession } from 'next-auth/react';
-
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]';
 /* export interface HomeProps {
   user: {
     name: string;
@@ -17,22 +18,12 @@ export default function ShortHand() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const session = await getSession({ req });
-
-  if (!session?.user) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
-  }
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   return {
     props: {
-      user: {
-        name: session.user.name,
-      }
+      session: await getServerSession(context.req, context.res, authOptions),
     },
   };
 };
