@@ -2,7 +2,7 @@
 
 Criação de Tarefas na qua você possa adicionar e compartilhar com seus amigos!
 
-![Imagem do Projeto](/Imagens/task.png)
+![Imagem do Projeto](Imagens/task.png)
 
 ## Tecnologias utilizadas
 - Next.js
@@ -13,7 +13,7 @@ Criação de Tarefas na qua você possa adicionar e compartilhar com seus amigos
 ## Pré-requisitos
 Antes de começar, certifique-se de ter instalado o seguinte:
 
-- Node.js (versão X.X.X)
+- Node.js (versão 18.16.1)
 - npm ou yarn
 
 ## Instalação
