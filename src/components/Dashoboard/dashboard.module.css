@@ -1,0 +1,97 @@
+
+.container {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.myTarefa {
+  display: flex;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  border-top: #7c7c7c23 5px solid;
+}
+
+.titleTarefas {
+  margin: 3rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.tasks {
+  margin: 10px 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.164);
+}
+
+.taskContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.labelPublico {
+  background-color: blue;
+  padding: 2px 1rem;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 0.5rem;
+  line-height: 150%;
+}
+
+.taskContent p {
+  white-space: pre-wrap;
+}
+
+.buttonTrash {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border: 0;
+}
+
+.message{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(190, 190, 190, 0.158);
+  padding: 20px 40px;
+  border-radius: 100px 100px 0px 0px;
+  box-shadow: 0px 0px 2px 0px rgb(0, 221, 136);;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.copied {
+  color:chartreuse;
+  font-style: italic;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+

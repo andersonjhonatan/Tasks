@@ -1,0 +1,108 @@
+.title {
+  font-size: 2rem;
+  display: flex;
+  font-weight: 600;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  min-width: 60%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.inputTextarea {
+  border-radius: 10px;
+  height: 10rem;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.inputTextarea::selection {
+  background-color: rgb(75, 154, 206);
+  color: white;
+  border-radius: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  padding: 5px;
+}
+
+.inputTextarea::placeholder {
+  color: rgb(182, 182, 182);
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+}
+
+.checkbox {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+}
+
+.containerForm label {
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+}
+
+.buttonSubmit {
+  width: 100%;
+  background-color: rgb(58, 58, 58);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  transition: 0.3s;
+  font-weight: 600;
+  color: white;
+}
+
+.buttonSubmit:hover:not([disabled]) {
+  background-color: rgb(0, 221, 136);
+  color: rgb(0, 0, 0);
+
+}
+
+.buttonSubmit:disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+
+.inputTextareaBorder {
+  border-radius: 10px;
+  height: 10rem;
+  color: black;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 0 0 3px rgb(0, 221, 136);
+}
+
+.inputTextareaBorder::placeholder {
+  color: rgb(182, 182, 182);
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+}

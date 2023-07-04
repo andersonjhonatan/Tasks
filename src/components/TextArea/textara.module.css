@@ -1,0 +1,16 @@
+.inputTextarea {
+  border-radius: 10px;
+  height: 10rem;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 1rem;
+  font-size: 20px;
+  width: 88vw;
+}
+
+.inputTextarea::placeholder {
+  color: rgb(182, 182, 182);
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+}
