@@ -1,8 +1,8 @@
 # Nome do Projeto
 
-[Descrição do Projeto]
+Criação de Tarefas na qua você possa adicionar e compartilhar com seus amigos!
 
-![Imagem do Projeto](/anderson/Imagens/task.png)
+![Imagem do Projeto](/Imagens/task.png)
 
 ## Tecnologias utilizadas
 - Next.js
