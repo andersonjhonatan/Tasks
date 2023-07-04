@@ -4,9 +4,7 @@ import Head from 'next/head';
 import TextAreaForm from '../TextareaForm/TextAreaForm';
 import { FiShare2, FiTrash } from 'react-icons/fi';
 import { db } from '@/src/services/firebaseConnection';
-import Loading from '../Loading/Loading';
 import {
-  addDoc,
   collection,
   where,
   query,
@@ -69,7 +67,6 @@ const Shorthand = () => {
     } catch (error) {}
   };
 
-
   useEffect(() => {
     if (copy) {
       const timeout = setTimeout(() => {
@@ -98,7 +95,10 @@ const Shorthand = () => {
           <article className={styles.tasks} key={task.id}>
             {task.public && (
               <div className={styles.taskContainer}>
-                <Link href={`${process.env.NEXT_PUBLIC_URL}/task/${task.id}`} className={styles.labelPublico}>
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_URL}/task/${task.id}`}
+                  className={styles.labelPublico}
+                >
                   Publico
                 </Link>
                 <button className={styles.buttonShare}>
