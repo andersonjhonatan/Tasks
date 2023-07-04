@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nome do Projeto
 
-## Getting Started
+[Descrição do Projeto]
 
-First, run the development server:
+![Imagem do Projeto](/anderson/Imagens/task.png)
 
-```bash
+## Tecnologias utilizadas
+- Next.js
+- TypeScript
+- Firebase
+- NextAuth.js
+
+## Pré-requisitos
+Antes de começar, certifique-se de ter instalado o seguinte:
+
+- Node.js (versão X.X.X)
+- npm ou yarn
+
+## Instalação
+Siga os passos abaixo para instalar e configurar o projeto:
+
+1. Clone o repositório do projeto:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-projeto.git
+   cd seu-projeto
+
+
+## Instale as dependências:
+npm install
+# ou
+yarn
+
+
+## CConfiguração do Firebase
+Crie um projeto no Firebase Console.
+Copie as credenciais do projeto (apiKey, authDomain, projectId, etc.).
+Cole as credenciais no arquivo de configuração do Firebase (src/firebaseConfig.ts).
+
+## Configuração do NextAuth.js
+Defina as provedoras de autenticação que você deseja utilizar (ex: Google, GitHub, etc.) no arquivo src/pages/api/auth/[...nextauth].ts.
+Configure as informações de autenticação para cada provedor no arquivo de configuração do Firebase (src/firebaseConfig.ts).
+
+## Uso
+Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto estará disponível em http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura do Projeto
+|-- src/
+|   |-- components/
+|   |-- pages/
+|   |-- styles/
+|   |-- firebaseConfig.ts
+|-- public/
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contribuição
+Se você quiser contribuir com o projeto, siga os passos abaixo:
 
-## Learn More
+Crie um fork do projeto.
+Crie uma branch para a sua feature (git checkout -b feature/MinhaFeature).
+Faça suas alterações e faça o commit delas (git commit -m 'Adicionar minha feature').
+Faça o push para a branch (git push origin feature/MinhaFeature).
+Abra um Pull Request na branch principal.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Agradeço o uso do Tasks+. Caso tenha alguma dúvida ou sugestão, entre em contato conosco através das nossas informações de contato.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contato email: ajhonatan76@gmail.com
