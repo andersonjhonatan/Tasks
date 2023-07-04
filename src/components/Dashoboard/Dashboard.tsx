@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, ChangeEvent } from 'react';
 import styles from './dashboard.module.css';
 import Head from 'next/head';
 import TextAreaForm from '../TextareaForm/TextAreaForm';
 import { FiShare2, FiTrash } from 'react-icons/fi';
 import { db } from '@/src/services/firebaseConnection';
+import { CiEdit, CiSaveUp2 } from 'react-icons/ci';
 import {
   collection,
   where,
@@ -11,7 +12,10 @@ import {
   orderBy,
   onSnapshot,
   deleteDoc,
+  updateDoc,
   doc,
+  getDoc,
+  getFirestore,
 } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
@@ -28,6 +32,9 @@ const Shorthand = () => {
   const [tasks, setTasks] = useState<ITask[]>([]);
   const { data: session } = useSession();
   const [copy, setCopy] = useState(false);
+  const [input, setInput] = useState('');
+  const [edit, setEdit] = useState(false);
+  const [editingTaskId, setEditingTaskId] = useState('');
 
   useEffect(() => {
     const loadTask = async () => {
@@ -77,6 +84,22 @@ const Shorthand = () => {
     }
   }, [copy]);
 
+  const handleInputEdit = ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(value);
+  };
+
+  const handleEdit = async (id: string) => {
+    try {
+      const db = getFirestore();
+      await updateDoc(doc(db, 'tarefas', id), {
+        tarefa: input,
+      });
+      setEditingTaskId('');
+    } catch (error) {
+      console.error('Erro ao atualizar tarefa:', error);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -108,9 +131,20 @@ const Shorthand = () => {
                     onClick={() => handleShared(task.id)}
                   />
                 </button>
+
                 {copy && <p className={styles.copied}>Copiado com sucesso !</p>}
               </div>
             )}
+
+            {editingTaskId === task.id && (
+              <textarea
+                placeholder='Edite sua tarefa...'
+                className={styles.inputTextarea}
+                value={input}
+                onChange={handleInputEdit}
+              />
+            )}
+
             <div className={styles.taskContent}>
               {task.public ? (
                 <Link href={`${process.env.NEXT_PUBLIC_URL}/task/${task.id}`}>
@@ -119,10 +153,25 @@ const Shorthand = () => {
               ) : (
                 <p>{task.tarefa}</p>
               )}
-
-              <button className={styles.buttonTrash} onClick={() => handleTrash(task.id)}>
-                <FiTrash size={22} color='#ff3131' />
-              </button>
+              <section className={styles.taskActions}>
+                <button
+                  className={styles.buttonTrash}
+                  onClick={() => handleTrash(task.id)}
+                >
+                  <FiTrash size={22} color='#ff3131' />
+                </button>
+                <button className={styles.buttonEdit}>
+                  <CiEdit size={22} color='#3183ff' onClick={() => {
+                    setInput(task.tarefa)
+                    setEditingTaskId(task.id)
+                  }} />
+                </button>
+                {editingTaskId === task.id && (
+                  <button onClick={() => handleEdit(task.id)}>
+                    <CiSaveUp2 size={22} color='#0d7a3e' />
+                  </button>
+                )}
+              </section>
             </div>
           </article>
         ))}
